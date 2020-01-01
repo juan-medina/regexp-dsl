@@ -1,2 +1,2 @@
 # regexp-dsl
-expressive regular expression with a domain specific language
+expressive regular expressions with a domain specific language
