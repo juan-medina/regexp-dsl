@@ -1,5 +1,5 @@
 site_name: 'RegExp DSL'
-site_url: 'http://xxxx'
+site_url: 'https://juan-medina.github.io/regexp-dsl/'
 site_description: 'Expressive regular expressions with a domain specific language.'
 site_author: 'Juan Medina'
 copyright: '(C) 2020 Juan Medina'

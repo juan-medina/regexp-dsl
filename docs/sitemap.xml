@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-     <loc>http://xxxx/</loc>
+     <loc>https://juan-medina.github.io/regexp-dsl/</loc>
      <lastmod>2020-02-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://xxxx/examples/</loc>
+     <loc>https://juan-medina.github.io/regexp-dsl/examples/</loc>
      <lastmod>2020-02-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://xxxx/api/regexp-dsl/com.medina.juan.regexp.dsl/</loc>
+     <loc>https://juan-medina.github.io/regexp-dsl/api/regexp-dsl/com.medina.juan.regexp.dsl/</loc>
      <lastmod>2020-02-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
