@@ -2,7 +2,7 @@
 
 Expressive Regular Expressions with a Domain Specific Language
 
-[![License: Apache2](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://github.com/juan-medina/regexp-dsl/blob/master/LICENSE)
+[![License: Apache2](https://img.shields.io/badge/license-Apache%202-blue.svg)](/LICENSE)
 
 ## License
 

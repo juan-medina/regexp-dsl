@@ -1,0 +1,40 @@
+site_name: 'RegExp DSL'
+site_url: 'http://xxxx'
+site_description: 'Expressive regular expressions with a domain specific language.'
+site_author: 'Juan Medina'
+copyright: '(C) 2020 Juan Medina'
+
+repo_url: https://github.com/juan-medina/regexp-dsl
+repo_name: 'GitHub'
+
+pages:
+  - Home: 'index.md'
+  - Examples : 'examples.md'
+  - API Documentation:
+      - 'Index': 'api/regexp-dsl/com.medina.juan.regexp.dsl/index.md'
+theme:
+  name: material
+  palette:
+    primary: 'cyan'
+    accent: 'deep-purple'
+docs_dir: edit
+site_dir: docs
+markdown_extensions:
+  - codehilite
+  - smarty
+  - codehilite:
+      guess_lang: false
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.emoji
+  - tables
+  - admonition

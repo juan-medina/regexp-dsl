@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "1.3.61"
+    id("org.jetbrains.dokka") version "0.10.0"
 }
 
 group = "com.medina.juan"
@@ -7,6 +8,7 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -28,4 +30,9 @@ tasks {
     test {
         useJUnitPlatform()
     }
+    val dokka by getting(org.jetbrains.dokka.gradle.DokkaTask::class) {
+        outputFormat = "gfm"
+        outputDirectory = "edit/api"
+    }
+
 }
