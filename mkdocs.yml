@@ -16,7 +16,7 @@ theme:
   palette:
     primary: 'cyan'
     accent: 'deep-purple'
-docs_dir: edit
+docs_dir: src/docs
 site_dir: docs
 markdown_extensions:
   - codehilite

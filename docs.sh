@@ -3,8 +3,8 @@
 set -o errexit
 
 rm -rf docs
-rm -f edit/index.md
-cp README.md edit/index.md
+rm -f src/docs/index.md
+cp README.md src/docs/index.md
 
 mkdir docs
 

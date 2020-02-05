@@ -32,7 +32,7 @@ tasks {
     }
     val dokka by getting(org.jetbrains.dokka.gradle.DokkaTask::class) {
         outputFormat = "gfm"
-        outputDirectory = "edit/api"
+        outputDirectory = "src/docs/api"
     }
 
 }
