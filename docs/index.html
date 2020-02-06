@@ -255,6 +255,81 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#info" class="md-nav__link">
+    Info
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    Maven
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle-groovy" class="md-nav__link">
+    Gradle Groovy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle-kotlin" class="md-nav__link">
+    Gradle Kotlin
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generating-a-regexp" class="md-nav__link">
+    Generating a RegExp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-a-pattern" class="md-nav__link">
+    Generating a pattern
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsr-validations" class="md-nav__link">
+    JSR Validations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#license" class="md-nav__link">
     License
   </a>
@@ -317,6 +392,81 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#info" class="md-nav__link">
+    Info
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    Maven
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle-groovy" class="md-nav__link">
+    Gradle Groovy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle-kotlin" class="md-nav__link">
+    Gradle Kotlin
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generating-a-regexp" class="md-nav__link">
+    Generating a RegExp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-a-pattern" class="md-nav__link">
+    Generating a pattern
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsr-validations" class="md-nav__link">
+    JSR Validations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#license" class="md-nav__link">
     License
   </a>
@@ -346,6 +496,82 @@
 <p>Expressive Regular Expressions with a Domain Specific Language</p>
 <p><a href="https://github.com/juan-medina/regexp-dsl/blob/master/LICENSE"><img alt="License: Apache2" src="https://img.shields.io/badge/license-Apache%202-blue.svg" /></a>
 <a href="https://juan-medina.github.io/regexp-dsl/"><img alt="License: Apache2" src="https://img.shields.io/badge/docs-latest-brightgreen.svg" /></a></p>
+<h2 id="info">Info<a class="headerlink" href="#info" title="Permanent link">&para;</a></h2>
+<p>RegExp DSL is a library that allow the creation an usage of regular expressions via a Domain Specif Language tha aims to be expressive. The overall idea is to make expressions easy to understand, modify and update. </p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h3 id="maven">Maven<a class="headerlink" href="#maven" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>com.medina.juan<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>regexp-dsl<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+  <span class="nt">&lt;type&gt;</span>bundle<span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
+
+<h3 id="gradle-groovy">Gradle Groovy<a class="headerlink" href="#gradle-groovy" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="n">implementation</span> <span class="s1">&#39;com.medina.juan:regexp-dsl:1.0.0&#39;</span>
+</pre></div>
+
+<h3 id="gradle-kotlin">Gradle Kotlin<a class="headerlink" href="#gradle-kotlin" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;com.medina.juan:regexp-dsl:1.0.0&quot;</span><span class="p">)</span>
+</pre></div>
+
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<h3 id="generating-a-regexp">Generating a RegExp<a class="headerlink" href="#generating-a-regexp" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="k">import</span> <span class="nn">com.medina.juan.regexp.dsl.regexp</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">val</span> <span class="py">reg</span> <span class="p">=</span> <span class="n">regexp</span> <span class="p">{</span>        
+        <span class="n">literal</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span>
+        <span class="n">maybe</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">)</span>    
+        <span class="n">zeroOrMore</span><span class="p">{</span>
+            <span class="n">character</span><span class="p">()</span>
+        <span class="p">}</span>        
+    <span class="p">}</span>
+
+    <span class="n">println</span><span class="p">(</span><span class="n">reg</span><span class="p">.</span><span class="n">matches</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">))</span>         <span class="c1">// true</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">reg</span><span class="p">.</span><span class="n">matches</span><span class="p">(</span><span class="s">&quot;fooooo&quot;</span><span class="p">))</span>      <span class="c1">// true</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">reg</span><span class="p">.</span><span class="n">matches</span><span class="p">(</span><span class="s">&quot;foobar&quot;</span><span class="p">))</span>      <span class="c1">// true</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">reg</span><span class="p">.</span><span class="n">matches</span><span class="p">(</span><span class="s">&quot;foobarrrr&quot;</span><span class="p">))</span>   <span class="c1">// true</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">reg</span><span class="p">.</span><span class="n">matches</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">))</span>         <span class="c1">// false</span>
+<span class="p">}</span> 
+</pre></div>
+
+<h3 id="generating-a-pattern">Generating a pattern<a class="headerlink" href="#generating-a-pattern" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="k">import</span> <span class="nn">com.medina.juan.regexp.dsl.pattern</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">val</span> <span class="py">ptn</span> <span class="p">=</span> <span class="n">pattern</span> <span class="p">{</span>        
+        <span class="n">literal</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span>
+        <span class="n">maybe</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">)</span>    
+        <span class="n">zeroOrMore</span><span class="p">{</span>
+            <span class="n">character</span><span class="p">()</span>
+        <span class="p">}</span>        
+    <span class="p">}</span>
+
+    <span class="n">println</span><span class="p">(</span><span class="n">ptn</span><span class="p">)</span> <span class="c1">// foo(?:bar)?.*     </span>
+<span class="p">}</span> 
+</pre></div>
+
+<h3 id="jsr-validations">JSR Validations<a class="headerlink" href="#jsr-validations" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">ValidateName</span> <span class="p">:</span> <span class="n">DslValidator</span><span class="p">({</span>
+    <span class="n">literal</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span>
+    <span class="n">maybe</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">)</span>
+    <span class="n">zeroOrMore</span> <span class="p">{</span>
+        <span class="n">character</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="n">@Constraint</span><span class="p">(</span><span class="n">validatedBy</span> <span class="p">=</span> <span class="p">[</span><span class="n">ValidateName</span><span class="o">::</span><span class="k">class</span><span class="p">])</span>
+<span class="k">annotation</span> <span class="k">class</span> <span class="nc">ValidName</span><span class="p">(</span>
+    <span class="k">val</span> <span class="py">message</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&quot;name is not valid&quot;</span><span class="p">,</span>
+    <span class="k">val</span> <span class="py">groups</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">KClass</span><span class="p">&lt;*&gt;&gt;</span> <span class="p">=</span> <span class="p">[],</span>
+    <span class="k">val</span> <span class="py">payload</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">KClass</span><span class="p">&lt;*&gt;&gt;</span> <span class="p">=</span> <span class="p">[]</span>
+<span class="p">)</span>
+
+<span class="k">data</span> <span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">@field</span><span class="p">:</span><span class="n">ValidName</span> <span class="k">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span>
+</pre></div>
+
 <h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>    Copyright (C) 2020 Juan Medina
 

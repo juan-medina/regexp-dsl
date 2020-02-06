@@ -344,35 +344,39 @@
                 
                 <h1 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h1>
 <h3 id="check-an-url-and-get-the-domain">Check an Url and get the domain<a class="headerlink" href="#check-an-url-and-get-the-domain" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="k">val</span> <span class="py">urlCheck</span> <span class="p">=</span> <span class="n">regexp</span> <span class="p">{</span>
-    <span class="n">line</span> <span class="p">{</span>
-        <span class="n">literal</span><span class="p">(</span><span class="s">&quot;http&quot;</span><span class="p">)</span>
-        <span class="n">maybe</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">)</span>
-        <span class="n">literal</span><span class="p">(</span><span class="s">&quot;://&quot;</span><span class="p">)</span>
-        <span class="n">group</span> <span class="p">{</span>
-            <span class="n">oneOrMore</span> <span class="p">{</span>
-                <span class="n">oneCharacterOf</span> <span class="p">{</span>
-                    <span class="n">alphaNumeric</span><span class="p">()</span>
-                    <span class="n">character</span><span class="p">(</span><span class="sc">&#39;-&#39;</span><span class="p">)</span>
-                    <span class="n">character</span><span class="p">(</span><span class="sc">&#39;.&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="k">import</span> <span class="nn">com.medina.juan.regexp.dsl.regexp</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">val</span> <span class="py">urlCheck</span> <span class="p">=</span> <span class="n">regexp</span> <span class="p">{</span>
+        <span class="n">line</span> <span class="p">{</span>
+            <span class="n">literal</span><span class="p">(</span><span class="s">&quot;http&quot;</span><span class="p">)</span>
+            <span class="n">maybe</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">)</span>
+            <span class="n">literal</span><span class="p">(</span><span class="s">&quot;://&quot;</span><span class="p">)</span>
+            <span class="n">group</span> <span class="p">{</span>
+                <span class="n">oneOrMore</span> <span class="p">{</span>
+                    <span class="n">oneCharacterOf</span> <span class="p">{</span>
+                        <span class="n">alphaNumeric</span><span class="p">()</span>
+                        <span class="n">character</span><span class="p">(</span><span class="sc">&#39;-&#39;</span><span class="p">)</span>
+                        <span class="n">character</span><span class="p">(</span><span class="sc">&#39;.&#39;</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="n">character</span><span class="p">(</span><span class="sc">&#39;.&#39;</span><span class="p">)</span>
+                <span class="n">repeat</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">oneCharacterOf</span> <span class="p">{</span>
+                        <span class="n">alpha</span><span class="p">()</span>
+                    <span class="p">}</span>
                 <span class="p">}</span>
             <span class="p">}</span>
-            <span class="n">character</span><span class="p">(</span><span class="sc">&#39;.&#39;</span><span class="p">)</span>
-            <span class="n">repeat</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">oneCharacterOf</span> <span class="p">{</span>
-                    <span class="n">alpha</span><span class="p">()</span>
-                <span class="p">}</span>
+            <span class="n">zeroOrMore</span><span class="p">{</span>
+                <span class="n">character</span><span class="p">()</span>
             <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="n">zeroOrMore</span><span class="p">{</span>
-            <span class="n">character</span><span class="p">()</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">}</span>
 
-<span class="k">if</span><span class="p">(</span><span class="n">urlCheck</span><span class="p">.</span><span class="n">matches</span><span class="p">(</span><span class="s">&quot;http://google.co.uk?q=foo&quot;</span><span class="p">)){</span>
-    <span class="k">val</span> <span class="py">domain</span> <span class="p">=</span> <span class="n">urlCheck</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">case</span><span class="p">.</span><span class="n">url</span><span class="p">)</span><span class="o">?.</span><span class="n">groups</span><span class="o">?.</span><span class="k">get</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="o">?.</span><span class="n">value</span>
-    <span class="n">println</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span> <span class="c1">//&quot;google.co.uk&quot;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">urlCheck</span><span class="p">.</span><span class="n">matches</span><span class="p">(</span><span class="s">&quot;http://google.co.uk?q=foo&quot;</span><span class="p">)){</span>
+        <span class="k">val</span> <span class="py">domain</span> <span class="p">=</span> <span class="n">urlCheck</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">case</span><span class="p">.</span><span class="n">url</span><span class="p">)</span><span class="o">?.</span><span class="n">groups</span><span class="o">?.</span><span class="k">get</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="o">?.</span><span class="n">value</span>
+        <span class="n">println</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span> <span class="c1">//&quot;google.co.uk&quot;</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
                 

@@ -5,6 +5,98 @@ Expressive Regular Expressions with a Domain Specific Language
 [![License: Apache2](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://github.com/juan-medina/regexp-dsl/blob/master/LICENSE)
 [![License: Apache2](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://juan-medina.github.io/regexp-dsl/)
 
+## Info
+
+RegExp DSL is a library that allow the creation an usage of regular expressions via a Domain Specif Language tha aims to be expressive. The overall idea is to make expressions easy to understand, modify and update. 
+
+## Installation
+
+### Maven
+
+```xml
+<dependency>
+  <groupId>com.medina.juan</groupId>
+  <artifactId>regexp-dsl</artifactId>
+  <version>1.0.0</version>
+  <type>bundle</type>
+</dependency>
+```
+
+### Gradle Groovy
+
+```groovy
+implementation 'com.medina.juan:regexp-dsl:1.0.0'
+```
+
+### Gradle Kotlin
+
+```kotlin
+implementation("com.medina.juan:regexp-dsl:1.0.0")
+```
+
+## Usage
+
+### Generating a RegExp
+
+```kotlin
+import com.medina.juan.regexp.dsl.regexp
+
+fun main() {
+    val reg = regexp {        
+        literal("foo")
+        maybe("bar")    
+        zeroOrMore{
+            character()
+        }        
+    }
+
+    println(reg.matches("foo"))         // true
+    println(reg.matches("fooooo"))      // true
+    println(reg.matches("foobar"))      // true
+    println(reg.matches("foobarrrr"))   // true
+    println(reg.matches("bar"))         // false
+} 
+```
+
+### Generating a pattern
+
+```kotlin
+import com.medina.juan.regexp.dsl.pattern
+
+fun main() {
+    val ptn = pattern {        
+        literal("foo")
+        maybe("bar")    
+        zeroOrMore{
+            character()
+        }        
+    }
+
+    println(ptn) // foo(?:bar)?.*     
+} 
+```
+
+### JSR Validations
+
+```kotlin
+class ValidateName : DslValidator({
+    literal("foo")
+    maybe("bar")
+    zeroOrMore {
+        character()
+    }
+})
+
+@Constraint(validatedBy = [ValidateName::class])
+annotation class ValidName(
+    val message: String = "name is not valid",
+    val groups: Array<KClass<*>> = [],
+    val payload: Array<KClass<*>> = []
+)
+
+data class Person(@field:ValidName val name: String)
+```
+
 ## License
 
 ```text

@@ -13,6 +13,14 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
+
+    implementation("javax.validation:validation-api:2.0.1.Final")
+
+    testRuntimeOnly("org.hibernate.validator:hibernate-validator:6.0.2.Final")
+    testRuntimeOnly("org.hibernate.validator:hibernate-validator-annotation-processor:6.0.2.Final")
+    testRuntimeOnly("javax.el:javax.el-api:3.0.0")
+    testRuntimeOnly("org.glassfish.web:javax.el:2.2.6")
+
     testImplementation(kotlin("test"))
     testRuntimeOnly(kotlin("reflect"))
 

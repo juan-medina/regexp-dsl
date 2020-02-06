@@ -1,5 +1,8 @@
 package com.medina.juan.regexp.dsl
 
+import javax.validation.ConstraintValidator
+import javax.validation.ConstraintValidatorContext
+
 class DslElement(
     private val before: String = "",
     private val after: String = "",
@@ -74,8 +77,19 @@ class DslElement(
     fun zeroOrMore(children: DslElement.() -> Unit = empty) = add("", "*", children)
 }
 
-fun regexp(init: DslElement.() -> Unit): Regex {
+fun pattern(init: DslElement.() -> Unit): String {
     val root = DslElement()
     root.init()
-    return Regex(root.build())
+    return root.build()
+}
+
+fun regexp(init: DslElement.() -> Unit): Regex {
+    return Regex(pattern(init))
+}
+
+open class RegExValidator(init: DslElement.() -> Unit) : ConstraintValidator<Annotation, Any> {
+    private var pastern = DslElement().apply(init).build()
+    override fun isValid(value: Any, context: ConstraintValidatorContext): Boolean {
+        return Regex(pastern).matches(value.toString())
+    }
 }

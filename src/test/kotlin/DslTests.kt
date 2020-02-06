@@ -1,20 +1,20 @@
-import com.medina.juan.regexp.dsl.regexp
+import com.medina.juan.regexp.dsl.pattern
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
 internal class DslTests {
     @Test
     fun `we should have literals`() {
-        val reg = regexp {
+        val ptn = pattern {
             literal("foo")
             literal("bar")
         }
-        assertEquals("foobar", reg.pattern)
+        assertEquals("foobar", ptn)
     }
 
     @Test
     fun `we could create capturing groups`() {
-        val reg = regexp {
+        val ptn = pattern {
             group {
                 literal("foo")
             }
@@ -22,72 +22,72 @@ internal class DslTests {
                 literal("bar")
             }
         }
-        assertEquals("(foo)(bar)", reg.pattern)
+        assertEquals("(foo)(bar)", ptn)
     }
 
     @Test
     fun `we could use line`() {
-        val reg = regexp {
+        val ptn = pattern {
             line {
                 literal("foo")
             }
         }
-        assertEquals("^foo$", reg.pattern)
+        assertEquals("^foo$", ptn)
     }
 
     @Test
     fun `we could match characters`() {
-        val reg = regexp {
+        val ptn = pattern {
             character()
             character('@')
         }
-        assertEquals(".\\@", reg.pattern)
+        assertEquals(".\\@", ptn)
     }
 
     @Test
     fun `we could choose one of characters`() {
-        val reg = regexp {
+        val ptn = pattern {
             oneCharacterOf {
                 character('@')
                 character('$')
             }
         }
-        assertEquals("[\\@\\$]", reg.pattern)
+        assertEquals("[\\@\\$]", ptn)
     }
 
     @Test
     fun `we could use ranges`() {
-        val reg = regexp {
+        val ptn = pattern {
             oneCharacterOf {
                 range('a', 'z')
             }
         }
-        assertEquals("[a-z]", reg.pattern)
+        assertEquals("[a-z]", ptn)
     }
 
     @Test
     fun `we could match alpha`() {
-        val reg = regexp {
+        val ptn = pattern {
             oneCharacterOf {
                 alpha()
             }
         }
-        assertEquals("[a-zA-Z]", reg.pattern)
+        assertEquals("[a-zA-Z]", ptn)
     }
 
     @Test
     fun `we could match alpha numeric`() {
-        val reg = regexp {
+        val ptn = pattern {
             oneCharacterOf {
                 alphaNumeric()
             }
         }
-        assertEquals("[a-zA-Z0-9]", reg.pattern)
+        assertEquals("[a-zA-Z0-9]", ptn)
     }
 
     @Test
     fun `we could repeat children`() {
-        val reg = regexp {
+        val ptn = pattern {
             repeat(1, 2) {
                 character('*')
             }
@@ -95,46 +95,46 @@ internal class DslTests {
                 character('@')
             }
         }
-        assertEquals("\\*{1,2}\\@{5,}", reg.pattern)
+        assertEquals("\\*{1,2}\\@{5,}", ptn)
     }
 
     @Test
     fun `we could use maybe`() {
-        val reg = regexp {
+        val ptn = pattern {
             literal("child")
             maybe("ren")
         }
-        assertEquals("child(?:ren)?", reg.pattern)
+        assertEquals("child(?:ren)?", ptn)
     }
 
     @Test
     fun `we could use maybe with children`() {
-        val reg = regexp {
+        val ptn = pattern {
             literal("child")
             maybe {
                 literal("ren")
             }
         }
-        assertEquals("child(?:ren)?", reg.pattern)
+        assertEquals("child(?:ren)?", ptn)
     }
 
     @Test
     fun `we could get one or more`() {
-        val reg = regexp {
+        val ptn = pattern {
             oneOrMore {
                 character('a')
             }
         }
-        assertEquals("\\a+", reg.pattern)
+        assertEquals("\\a+", ptn)
     }
 
     @Test
     fun `we could get zero or more`() {
-        val reg = regexp {
+        val ptn = pattern {
             zeroOrMore() {
                 character('a')
             }
         }
-        assertEquals("\\a*", reg.pattern)
+        assertEquals("\\a*", ptn)
     }
 }
