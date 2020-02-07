@@ -17,9 +17,3 @@ cache:
     - $HOME/.gradle/wrapper     #Cache the gradle
     
 script: ./gradlew clean build
-deploy:
-  provider: script
-  script: ./gradlew bintrayUpload -PbintrayUsername=$BINTRAY_USER -PbintrayApiKey=$BINTRAY_KEY
-  skip_cleanup: true # to upload artifacts created during the build
-  on:
-    branch: master
