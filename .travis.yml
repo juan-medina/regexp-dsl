@@ -2,10 +2,20 @@ language: java
 
 before_install:
   - chmod +x gradlew
+  
+before_cache:
+    - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 
+cache:
+  directories:      #Cache all dirs under .gradle folder
+    - $HOME/.gradle/daemon      #Cache daemon logs
+    - $HOME/.gradle/native      #Cache library downloaded from the gradle dependency
+    - $HOME/.gradle/wrapper     #Cache the gradle
+    
 script: ./gradlew clean build
 deploy:
   provider: script
-  script: ./gradlew clean bintrayUpload -PbintrayUser=$BINTRAY_USER -PbintrayApiKey=$BINTRAY_KEY
+  script: ./gradlew bintrayUpload -PbintrayUser=$BINTRAY_USER -PbintrayApiKey=$BINTRAY_KEY
+  skip_cleanup: true # to upload artifacts created during the build
   on:
     branch: master
