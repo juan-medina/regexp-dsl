@@ -78,7 +78,7 @@ if (bintrayUsername != null && bintrayApiKey != null) {
         key = bintrayApiKey
 
         pkg.apply {
-            repo = rootProject.name
+            repo = "juan-medina"
             name = rootProject.name
 
             websiteUrl = "https://github.com/juan-medina/regexp-dsl/"
