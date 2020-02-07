@@ -16,24 +16,46 @@ RegExp DSL is a library that allow the creation an usage of regular expressions,
 ### Maven
 
 ```xml
-<dependency>
-  <groupId>com.medina.juan</groupId>
-  <artifactId>regexp-dsl</artifactId>
-  <version>1.0.0</version>
-  <type>bundle</type>
-</dependency>
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>com.github.juan-medina</groupId>
+        <artifactId>regexp-dsl</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </dependency>
+</dependencies>
 ```
 
 ### Gradle Groovy
 
 ```groovy
-implementation 'com.medina.juan:regexp-dsl:1.0.0'
+    repositories {
+		maven { url 'https://jitpack.io' }
+    }
+
+	dependencies {
+        implementation 'com.github.juan-medina:regexp-dsl:0.1.0-SNAPSHOT'
+    }
 ```
 
 ### Gradle Kotlin
 
 ```kotlin
-implementation("com.medina.juan:regexp-dsl:1.0.0")
+    repositories {
+		maven {
+            setUrl("https://jitpack.io")
+        }
+    }
+
+    dependencies {
+        implementation("com.github.juan-medina:regexp-dsl:0.1.0-SNAPSHOT")
+    }
 ```
 
 ## Usage
@@ -78,7 +100,7 @@ fun main() {
 } 
 ```
 
-### JSR Validations
+### JSR 380 Validations
 
 ```kotlin
 class ValidateName : DslValidator({

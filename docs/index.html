@@ -318,8 +318,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#jsr-validations" class="md-nav__link">
-    JSR Validations
+  <a href="#jsr-380-validations" class="md-nav__link">
+    JSR 380 Validations
   </a>
   
 </li>
@@ -455,8 +455,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#jsr-validations" class="md-nav__link">
-    JSR Validations
+  <a href="#jsr-380-validations" class="md-nav__link">
+    JSR 380 Validations
   </a>
   
 </li>
@@ -495,25 +495,49 @@
                 <h1 id="regexp-dsl">RegExp DSL<a class="headerlink" href="#regexp-dsl" title="Permanent link">&para;</a></h1>
 <p>Expressive Regular Expressions with a Domain Specific Language written in Kotlin</p>
 <p><a href="https://github.com/juan-medina/regexp-dsl/blob/master/LICENSE"><img alt="License: Apache2" src="https://img.shields.io/badge/license-Apache%202-blue.svg" /></a>
-<a href="https://juan-medina.github.io/regexp-dsl/"><img alt="License: Apache2" src="https://img.shields.io/badge/docs-latest-brightgreen.svg" /></a></p>
+<a href="https://juan-medina.github.io/regexp-dsl/"><img alt="Docs" src="https://img.shields.io/badge/docs-latest-brightgreen.svg" /></a>
+<a href="https://travis-ci.com/juan-medina/regexp-dsl"><img alt="Build Status" src="https://travis-ci.com/juan-medina/regexp-dsl.svg?branch=master" /></a>
+<a href="https://jitpack.io/#juan-medina/regexp-dsl"><img alt="Jitpack" src="https://jitpack.io/v/juan-medina/regexp-dsl.svg" /></a></p>
 <h2 id="info">Info<a class="headerlink" href="#info" title="Permanent link">&para;</a></h2>
 <p>RegExp DSL is a library that allow the creation an usage of regular expressions, written in Kotlin, via a Domain Specif Language tha aims to be expressive. The overall idea is to make expressions easy to understand, modify and update. </p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <h3 id="maven">Maven<a class="headerlink" href="#maven" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
-  <span class="nt">&lt;groupId&gt;</span>com.medina.juan<span class="nt">&lt;/groupId&gt;</span>
-  <span class="nt">&lt;artifactId&gt;</span>regexp-dsl<span class="nt">&lt;/artifactId&gt;</span>
-  <span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
-  <span class="nt">&lt;type&gt;</span>bundle<span class="nt">&lt;/type&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;repositories&gt;</span>
+    <span class="nt">&lt;repository&gt;</span>
+        <span class="nt">&lt;id&gt;</span>jitpack.io<span class="nt">&lt;/id&gt;</span>
+        <span class="nt">&lt;url&gt;</span>https://jitpack.io<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;/repository&gt;</span>
+<span class="nt">&lt;/repositories&gt;</span>
+
+<span class="nt">&lt;dependencies&gt;</span>
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.github.juan-medina<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>regexp-dsl<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>0.1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;/dependencies&gt;</span>
 </pre></div>
 
 <h3 id="gradle-groovy">Gradle Groovy<a class="headerlink" href="#gradle-groovy" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="n">implementation</span> <span class="s1">&#39;com.medina.juan:regexp-dsl:1.0.0&#39;</span>
+<div class="codehilite"><pre><span></span>    <span class="n">repositories</span> <span class="o">{</span>
+        <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">&#39;https://jitpack.io&#39;</span> <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="n">dependencies</span> <span class="o">{</span>
+        <span class="n">implementation</span> <span class="s1">&#39;com.github.juan-medina:regexp-dsl:0.1.0-SNAPSHOT&#39;</span>
+    <span class="o">}</span>
 </pre></div>
 
 <h3 id="gradle-kotlin">Gradle Kotlin<a class="headerlink" href="#gradle-kotlin" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;com.medina.juan:regexp-dsl:1.0.0&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span>    <span class="n">repositories</span> <span class="p">{</span>
+        <span class="n">maven</span> <span class="p">{</span>
+            <span class="n">setUrl</span><span class="p">(</span><span class="s">&quot;https://jitpack.io&quot;</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">dependencies</span> <span class="p">{</span>
+        <span class="n">implementation</span><span class="p">(</span><span class="s">&quot;com.github.juan-medina:regexp-dsl:0.1.0-SNAPSHOT&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
 </pre></div>
 
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
@@ -553,7 +577,7 @@
 <span class="p">}</span> 
 </pre></div>
 
-<h3 id="jsr-validations">JSR Validations<a class="headerlink" href="#jsr-validations" title="Permanent link">&para;</a></h3>
+<h3 id="jsr-380-validations">JSR 380 Validations<a class="headerlink" href="#jsr-380-validations" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">ValidateName</span> <span class="p">:</span> <span class="n">DslValidator</span><span class="p">({</span>
     <span class="n">literal</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">)</span>
     <span class="n">maybe</span><span class="p">(</span><span class="s">&quot;bar&quot;</span><span class="p">)</span>
