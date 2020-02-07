@@ -1,6 +1,10 @@
+import org.jetbrains.dokka.gradle.DokkaTask
+
 plugins {
     kotlin("jvm") version "1.3.61"
     id("org.jetbrains.dokka") version "0.10.0"
+    id("maven-publish")
+    id("com.jfrog.bintray") version  "1.8.4"
 }
 
 group = "com.medina.juan"
@@ -38,9 +42,53 @@ tasks {
     test {
         useJUnitPlatform()
     }
-    val dokka by getting(org.jetbrains.dokka.gradle.DokkaTask::class) {
+    val dokka by getting(DokkaTask::class) {
         outputFormat = "gfm"
         outputDirectory = "src/docs/api"
     }
 
+}
+
+val sourcesJar by tasks.creating(Jar::class) {
+    archiveClassifier.set("sources")
+    from(sourceSets.main.get().allSource)
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("default") {
+            from(components["java"])
+
+            groupId = "$group"
+            artifactId = rootProject.name
+
+            artifact(sourcesJar) {
+                classifier = "sources"
+            }
+        }
+    }
+}
+
+val bintrayUsername = (properties["bintrayUsername"] as String?) ?: System.getenv("BINTRAY_USER")
+val bintrayApiKey = (properties["bintrayApiKey"] as String?) ?: System.getenv("BINTRAY_APIKEY")
+
+if (bintrayUsername != null && bintrayApiKey != null) {
+    bintray {
+        user = bintrayUsername
+        key = bintrayApiKey
+
+        pkg.apply {
+            repo = rootProject.name
+            name = rootProject.name
+
+            websiteUrl = "https://github.com/juan-medina/regexp-dsl/"
+            vcsUrl = "https://github.com/juan-medina/regexp-dsl.git"
+            issueTrackerUrl = "https://github.com/juan-medina/regexp-dsl/issues"
+
+            description = "Expressive Regular Expressions with a Domain Specific Language written in Kotlin"
+            setLabels("kotlin")
+            setLicenses("Apache 2.0")
+            setPublications("default")
+        }
+    }
 }

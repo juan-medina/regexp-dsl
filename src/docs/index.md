@@ -1,13 +1,13 @@
 # RegExp DSL
 
-Expressive Regular Expressions with a Domain Specific Language
+Expressive Regular Expressions with a Domain Specific Language written in Kotlin
 
 [![License: Apache2](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://github.com/juan-medina/regexp-dsl/blob/master/LICENSE)
 [![License: Apache2](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://juan-medina.github.io/regexp-dsl/)
 
 ## Info
 
-RegExp DSL is a library that allow the creation an usage of regular expressions via a Domain Specif Language tha aims to be expressive. The overall idea is to make expressions easy to understand, modify and update. 
+RegExp DSL is a library that allow the creation an usage of regular expressions, written in Kotlin, via a Domain Specif Language tha aims to be expressive. The overall idea is to make expressions easy to understand, modify and update. 
 
 ## Installation
 
