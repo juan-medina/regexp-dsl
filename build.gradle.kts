@@ -87,7 +87,7 @@ if (bintrayUsername != null && bintrayApiKey != null) {
 
             description = "Expressive Regular Expressions with a Domain Specific Language written in Kotlin"
             setLabels("kotlin")
-            setLicenses("Apache 2.0")
+            setLicenses("Apache-2.0")
             setPublications("default")
         }
     }
