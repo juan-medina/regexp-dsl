@@ -3,7 +3,9 @@
 Expressive Regular Expressions with a Domain Specific Language written in Kotlin
 
 [![License: Apache2](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://github.com/juan-medina/regexp-dsl/blob/master/LICENSE)
-[![License: Apache2](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://juan-medina.github.io/regexp-dsl/)
+[![Docs](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://juan-medina.github.io/regexp-dsl/)
+[![Build Status](https://travis-ci.com/juan-medina/regexp-dsl.svg?branch=master)](https://travis-ci.com/juan-medina/regexp-dsl)
+[![Jitpack](https://jitpack.io/v/juan-medina/regexp-dsl.svg)](https://jitpack.io/#juan-medina/regexp-dsl)
 
 ## Info
 
