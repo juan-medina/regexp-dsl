@@ -344,7 +344,9 @@
                 
                 <h1 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h1>
 <h3 id="check-an-url-and-get-the-domain">Check an Url and get the domain<a class="headerlink" href="#check-an-url-and-get-the-domain" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="k">import</span> <span class="nn">com.medina.juan.regexp.dsl.regexp</span>
+<div class="codehilite"><pre><span></span><span class="k">package</span> <span class="nn">com.medina.juan.samples.url</span>
+
+<span class="k">import</span> <span class="nn">com.medina.juan.regexp.dsl.regexp</span>
 
 <span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">val</span> <span class="py">urlCheck</span> <span class="p">=</span> <span class="n">regexp</span> <span class="p">{</span>
@@ -367,14 +369,15 @@
                     <span class="p">}</span>
                 <span class="p">}</span>
             <span class="p">}</span>
-            <span class="n">zeroOrMore</span><span class="p">{</span>
+            <span class="n">zeroOrMore</span> <span class="p">{</span>
                 <span class="n">character</span><span class="p">()</span>
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
 
-    <span class="k">if</span><span class="p">(</span><span class="n">urlCheck</span><span class="p">.</span><span class="n">matches</span><span class="p">(</span><span class="s">&quot;http://google.co.uk?q=foo&quot;</span><span class="p">)){</span>
-        <span class="k">val</span> <span class="py">domain</span> <span class="p">=</span> <span class="n">urlCheck</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">case</span><span class="p">.</span><span class="n">url</span><span class="p">)</span><span class="o">?.</span><span class="n">groups</span><span class="o">?.</span><span class="k">get</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="o">?.</span><span class="n">value</span>
+    <span class="k">val</span> <span class="py">url</span> <span class="p">=</span> <span class="s">&quot;http://google.co.uk?q=foo&quot;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">urlCheck</span><span class="p">.</span><span class="n">matches</span><span class="p">(</span><span class="n">url</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">val</span> <span class="py">domain</span> <span class="p">=</span> <span class="n">urlCheck</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">?.</span><span class="n">groups</span><span class="o">?.</span><span class="k">get</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="o">?.</span><span class="n">value</span>
         <span class="n">println</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span> <span class="c1">//&quot;google.co.uk&quot;</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -437,7 +440,7 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            (C) 2020 Juan Medina
+            © 2020 Juan Medina
           </div>
         
         powered by

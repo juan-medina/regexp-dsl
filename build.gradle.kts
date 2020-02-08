@@ -1,5 +1,3 @@
-import org.jetbrains.dokka.gradle.DokkaTask
-
 plugins {
     kotlin("jvm") version "1.3.61"
     id("org.jetbrains.dokka") version "0.10.0"
@@ -47,9 +45,11 @@ tasks {
     test {
         useJUnitPlatform()
     }
-    val dokka by getting(DokkaTask::class) {
-        outputFormat = "gfm"
-        outputDirectory = "src/docs/api"
+    dokka {
+        configuration {
+            outputFormat = "gfm"
+            outputDirectory = "src/docs/api"
+        }
     }
     artifacts {
         archives(sourcesJar)
